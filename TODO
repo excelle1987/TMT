@@ -1,0 +1,8 @@
+1. preprocess: 将psms文件提取必须的信息，生成临时文件profile_info.txt
+2. format-converter: 将MGF文件、mzXML文件转换成ms1，ms2格式
+3. peptide-simulator: 模拟出肽段的断裂位置，包括B、Y离子和TMTc离子簇位置
+4. peak-filter: 从ms2谱中提取report ion、TMTc离子，其中TMTc离子提取位置从-1~+7
+5. isotopic-deconvolution: 如果有TMTc离子，缺失<=2，参与去卷积计算比例
+6. peptide-merge: 将peptide相同的结果合并，（是否再做一次去卷积？）输出比例
+7. protein-merge: 将protein相同的结果合并，（是否再做一次去卷积，加入EM？）输出比例
+8. data-overview: 生成统计信息（missing peak 情况，charge 统计，）
